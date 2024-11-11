@@ -35,21 +35,23 @@ export class UserStorageService {
 
   static getUserRole(): string {
     const user = this.getUser();
-    return user?.userRole || '';
+    return user?.role || '';
   }
 
   static isAdminLoggedIn(): boolean {
-    if (this.getToken === null)
+    if (this.getToken() === null)
       return false;
 
-    return this.getUserRole() == 'ADMIN';
+    const userRole = this.getUserRole();
+    return userRole == 'ADMIN';
   }
   
   static isCustomerLoggedIn(): boolean {
-    if (this.getToken === null)
+    if (this.getToken() === null)
       return false;
 
-    return this.getUserRole() == 'CUSTOMER';
+    const userRole = this.getUserRole();
+    return userRole == 'CUSTOMER';
   }
 
   static signOut(): void {

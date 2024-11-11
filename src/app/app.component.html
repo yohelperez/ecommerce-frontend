@@ -8,7 +8,7 @@
   </mat-toolbar>
 </div>
 
-<div *ngIf="!isAdminLoggedIn">
+<div *ngIf="isAdminLoggedIn">
   <mat-toolbar color="primary" class="navbar">
     <span class="navbar-brand">E-Commerce</span>
     <span class="spacer"></span>
@@ -23,7 +23,7 @@
   </mat-toolbar>
 </div>
 
-<div *ngIf="!isCustomerLoggedIn">
+<div *ngIf="isCustomerLoggedIn">
   <mat-toolbar color="primary" class="navbar">
     <span class="navbar-brand">E-Commerce</span>
     <span class="spacer"></span>
