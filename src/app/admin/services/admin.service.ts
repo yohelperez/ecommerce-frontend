@@ -41,6 +41,13 @@ export class AdminService {
       headers: this.createAuthorizationHeader()
     })
   }
+
+  deleteProduct(productId: any): Observable<any> {
+    return this.http.delete(BASIC_URL + `api/admin/product/${productId}`, {
+      headers: this.createAuthorizationHeader(),
+      observe: 'response' // Allows access to status codes and such
+    })
+  }
   
   private createAuthorizationHeader(): HttpHeaders {
     return new HttpHeaders().set(

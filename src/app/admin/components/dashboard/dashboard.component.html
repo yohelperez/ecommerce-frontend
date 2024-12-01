@@ -40,7 +40,7 @@
                     [routerLink]="'/admin/product' + product.id">
                     Update
                 </button>
-                <button mat-raised-button color="warn" class="delete-button">
+                <button mat-raised-button color="warn" class="delete-button" (click)="deleteProduct(product.id)">
                     Delete
                 </button>
 
